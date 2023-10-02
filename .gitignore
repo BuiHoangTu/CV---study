@@ -5,3 +5,6 @@
 *.gz
 *.out
 *.pdf
+
+## vscode 
+.vscode/**
