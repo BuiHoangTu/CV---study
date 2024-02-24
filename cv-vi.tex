@@ -1,0 +1,344 @@
+% !TeX spellcheck = vi
+%-------------------------
+% Resume in Latex
+% Author : Puneet Gautam, puneet.gautam0206@gmail.com, punitrajgautam@uiit.ac.in
+% License : MIT
+%MIT License
+
+%Copyright (c) 2023 Puneet Gautam
+
+%Permission is hereby granted, free of charge, to any person obtaining a copy
+%of this software and associated documentation files (the "Software"), to deal
+%in the Software without restriction, including without limitation the rights
+%to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%copies of the Software, and to permit persons to whom the Software is
+%furnished to do so, subject to the following conditions:
+
+%The above copyright notice and this permission notice shall be included in all
+%copies or substantial portions of the Software.
+
+%THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%SOFTWARE.
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{vietnam}
+
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=0.6cm, top=0.5cm, right=0.6cm, bottom=0.5cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{:\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1},\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Bùi Hoàng Tú} % Your Name
+\newcommand{\course}{Cử nhân khoa học máy tính} % Your Course
+\newcommand{\roll}{Your Roll No} % Your Roll No.
+\newcommand{\phone}{913913505} % Your Phone Number
+\newcommand{\emaila}{tu.bh200547@sis.hust.edu.vn} %Email 1
+\newcommand{\emailb}{bhtu.work@gmail.com} %Email 2
+\newcommand{\github}{your GitHub link} %Github
+% \newcommand{\website}{https://www.yourwebsite.com} %Website
+\newcommand{\linkedin}{} %linkedin
+
+
+
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+\parbox{2.35cm}{%
+
+% \includegraphics[width=2cm,clip]{logo.png}
+
+}\parbox{\dimexpr\linewidth\relax}{
+\begin{tabularx}{\linewidth}{L R}
+  \textbf{\LARGE \name} 
+  & +84-\phone\\
+  
+  \course 
+  & \href{mailto:\emailb}{\emailb}
+  \\
+  
+   {Công nghệ thông tin Việt-Pháp} 
+   & \href{mailto:\emaila}{\emaila}
+   \\ %$|$ \href{\website}{Website}\\
+  
+  {Trường Đại học Bách Khoa Hà Nội, Hà Nội, Việt Nam} 
+  & %\href{https://github.com/\github}{GitHub} 
+\end{tabularx}
+}
+
+\vspace{-2mm}
+%-------------SUMMARY-----------------
+% \section{\textbf{Summary}}
+% This CV is automatically generated and deployed using the \href{https://github.com/kryptoniteX/autocvmkr}{autoCVmkr} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated.
+%-----------EDUCATION-----------------
+\setlength{\tabcolsep}{5pt} % Default value: 6pt
+\section{\textbf{Giáo dục}}
+\resumeSubHeadingListStart
+
+	\resumeSubheading
+	{Trường Đại học Bách Khoa Hà Nội}{Hà Nội, Việt Nam}
+	{Cử nhân Khoa học máy tính}{2020 - Hiện nay}
+	\resumeItemListStart
+		\item {CPA: 3.44/4.0}
+		\item {highest GPA: 3.8/4.0}
+	\resumeItemListEnd
+\resumeSubHeadingListEnd	
+
+% \renewcommand{\arraystretch}{1.1} % Default value: 1
+%-----------EXPERIENCE-----------------
+\section{\textbf{Kinh nghiệm làm việc}}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+    {Viettel High Tech}{380 Lạc Long Quân - Tây Hồ - Hà Nội}
+    {Back-end Developer (Part-time)}{Tháng 6 2023 - Hiện nay}
+    \resumeItemListStart
+    	\item {Thiết kế và xây dụng API services bằng Java Spring Boot}
+        \item {Sử dụng kiến trúc micro-service và grpc để kết nối giữa các sevices}
+        \item {Deploying ứng dụng trên Docker}
+        \item {Kiểm thử chức năng của các API}
+    \resumeItemListEnd 
+      
+\resumeSubHeadingListEnd
+\vspace{-6.5mm}
+%-----------PROJECTS-----------------
+\section{\textbf{Projects}}
+\resumeSubHeadingListStart
+    \resumeProject
+    {Quản lý trao thưởng học sinh} %Project Name
+    {Viettel High Tech} %Project Name, Location Name
+    {11/07/2023 - 26/09/2023} %Event Dates
+    {\href{https://github.com/BuiHoangTu/tths-microservice}{\textbf{https://github.com/BuiHoangTu/tths-microservice}}} %Website
+    \resumeItemListStart
+    	\item {API server được thiết kế và xây dựng nhằm giúp chính quyền địa phượng quản lý hoạt động trao thưởng cho các học sinh có thành tích xuất sắc trong học tập và các lĩnh vực khác}
+      	\item {Project được xây dựng là một API server, sử dụng kiến trúc micro-service để hỗ trợ tăng trưởng ngang }
+      	\item {Sử dụng Docker làm nền tảng deploy (Ứng dụng cũng có thể hoạt động trên các hệ điều hành hỗ trợ Java và gRPC), MongoDB làm database và gRPC làm kênh trao đổi dữ liệu giữa các services}
+    \resumeItemListEnd
+    \vspace{-1mm}
+    
+    \resumeProject
+    {Chinese-chess bot}
+    {Nhập môn trí tuệ nhân tạo - Đại học Bách khoa Hà Nội}
+    {28/05/2023 - 13/07/2023} 
+    {\href{https://github.com/BuiHoangTu/Co_tuong_UI}{\textbf{https://github.com/BuiHoangTu/Co\_tuong\_UI}}}
+    \resumeItemListStart
+    	\item {Ứng dụng web cờ tướng, cho phép người dùng đấu với máy có độ thông minh khác nhau}
+    	\item {Bot được thiết kế dựa trên thuật toán minimax với cắt tỉa alpha-beta nhằm giảm kết thúc sớm các tính toán không cần thiết }
+    \resumeItemListEnd
+
+    \resumeProject
+    {Assembly Project}
+    {Thực hành kiến trúc máy tính - Đại học Bách khoa Hà Nội}
+    {05/06/2022 - 16/08/2022} 
+    {\href{https://github.com/BuiHoangTu/Class-Assembly}{\textbf{https://github.com/BuiHoangTu/Class-Assembly}}}
+    \resumeItemListStart
+    	\item {Gồm 2 chương trình được viết bởi hợp ngữ cho kiến trúc MIPS}
+    	\item {CK8 là một giả lập của RAID5}
+    	\item {CK9 là một chương trình điều khiển hiển thị trên màn hình text-based, cho phép chọn cách hiển thị khác nhau của thông tin }
+    \resumeItemListEnd
+    \resumeProject
+    {Food e-commerce } %Project Name
+    {Thực hành cơ sở dữ liệu - Đại học Bách khoa Hà Nội} %Project Name, Location Name
+    {01/06/2022 - 16/08/2022} %Event Dates
+    {\href{https://github.com/BuiHoangTu/DBClass}{\textbf{https://github.com/BuiHoangTu/DBClass}}} %Website
+    \resumeItemListStart
+    	\item {Một trang web e-commerce cho các sản phẩm đồ ăn. Người dùng có thể đặt trước và yêu cầu giao hàng}
+        \item {Project được viết bởi ngôn ngữ PHP và MySQL}
+        \item  {Sử dụng XAMPP cho server, Mysql (MariaDB) trong XAMPP cho cơ sở dữ liệu cùng PHP và CSS cho giao diện trang web}
+    \resumeItemListEnd
+
+   
+\resumeSubHeadingListEnd
+\vspace{-7.5mm}
+
+\section{\textbf{Technical skills}}
+\resumeHeadingSkillStart
+	\resumeSubItem
+	{Ngôn ngữ lập trình} % Category
+    { MIPS Assembly, C/C++, Java, Kotlin, Python, SQL}
+    
+    %\vspace{-0.5mm}
+    
+	\resumeSubItem
+	{Công cụ} % Category
+    {Mars45, CMake-Ninja, Maven, Gradle, virtualenv, Visual Studio Code, IntelliJ, Latex} % Skills
+    
+    %\vspace{-0.5mm}
+    
+	\resumeSubItem
+	{Hệ điều hành} % Category
+    {Windows, Linux, Android} % Skills
+    
+    %\vspace{-0.5mm}
+    
+\resumeHeadingSkillEnd
+\vspace{-1.5mm}
+
+\section{\textbf{Ngôn ngữ}}
+\resumeHeadingSkillStart
+	\item Tiếng Pháp: B1
+	\vspace{-2mm}
+
+
+	\item Tiếng Anh: 7.5 IELTS
+	\vspace{-2mm}
+
+\resumeHeadingSkillEnd
+
+\section{\textbf{Personal skills}}
+\resumeHeadingSkillStart
+	\item Học hỏi nhanh, thái độ tích cực 
+	\vspace{-2mm}
+
+
+	\item Cống hiến cho công việc 
+	\vspace{-2mm}
+
+
+	\item Khả năng phân tích tình huống tốt 
+	\vspace{-1mm}
+
+\resumeHeadingSkillEnd
+\vspace{-1.5mm}
+
+
+\section{\textbf{Recreational Interests}}
+\begin{table}[h]
+	\begin{tabularx}{\textwidth} {X  X}
+		Ngắm cảnh  
+		& Đọc sách
+		\\
+		
+		Cờ vua 
+		& Tìm hiểu các nền văn hóa  
+		
+	\end{tabularx}
+\end{table}
+
+
+\vspace{-1.5mm}
+
+\vfill
+\end{document}
