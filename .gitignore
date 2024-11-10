@@ -8,3 +8,6 @@
 
 ## vscode 
 .vscode/**
+
+# local tests
+test*
