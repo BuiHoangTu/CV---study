@@ -39,5 +39,5 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: compiled_document.pdf          # The PDF to upload
+          file: cv.pdf          # The PDF to upload
           tag: ${{ github.event.release.tag_name }}  # The tag of the release
