@@ -20,14 +20,14 @@ jobs:
     steps:
       # Step 1: Check out the repository
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Set up LaTeX environment and compile
       - name: Set up LaTeX environment and Compile
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-          latexmk_flavor: pdflatex
+          compiler: pdflatex
           
       # Step 3: Rename output PDF if desired
       # - name: Rename output PDF
