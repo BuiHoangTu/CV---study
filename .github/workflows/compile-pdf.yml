@@ -27,7 +27,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-          latexmk_flavor: pdflatex
+          compiler: pdflatex
           
       # Step 3: Rename output PDF if desired
       # - name: Rename output PDF
