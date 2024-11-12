@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Compile to PDF
+
+# Controls when the workflow will run
+on:
+  release:
+    types: [published]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Check out the repository
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up LaTeX environment and compile
+      - name: Set up LaTeX environment and Compile
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+          latexmk_flavor: pdflatex
+          
+      # Step 3: Rename output PDF if desired
+      # - name: Rename output PDF
+      #   run: |
+      #     mv cv.pdf cv.pdf   # Rename to a more descriptive name, if you want
+
+      # Step 4: Upload the PDF to the GitHub release
+      - name: Upload PDF to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: cv.pdf          # The PDF to upload
+          tag: ${{ github.event.release.tag_name }}  # The tag of the release
